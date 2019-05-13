@@ -1,15 +1,17 @@
 module.exports = (sequelize, DataTypes) => {
     const Author = sequelize.define('author', {
-        id: {
-            type: DataTypes.INTEGER,
-            primaryKey: true,
+        id       : {
+            type         : DataTypes.INTEGER,
+            primaryKey   : true,
             autoIncrement: true
         },
+        avatar   : DataTypes.STRING,
         firstName: DataTypes.STRING,
-        lastName: DataTypes.STRING
+        lastName : DataTypes.STRING,
+        synopsis : DataTypes.STRING(1000)
         },
         {
-        freezeTableName: true,
+            freezeTableName: true,
         }
     );
 

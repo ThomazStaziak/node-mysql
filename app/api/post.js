@@ -1,6 +1,11 @@
 module.exports = (app, db) => {
-    app.get('/posts', (req, res) => {
+    app.get('/posts/', (req, res) => {
         db.post.findAll()
+            .then((result) => res.json(result))
+    })
+
+    app.get('/posts/limit/:number', (req, res) => {
+        db.post.findAll({ limit: parseInt(req.params.number) })
             .then((result) => res.json(result))
     })
 

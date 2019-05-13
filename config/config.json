@@ -1,26 +1,26 @@
 {
   "development": {
-    "username": "staziak",
-    "password": "staziak",
+    "username": "root",
+    "password": "root",
     "database": "node_sequelize",
     "host"    : "127.0.0.1",
     "dialect" : "mysql",
-    "port"    : "3306"
+    "port"    : "8889"
   },
   "test": {
-    "username": "staziak",
-    "password": "staziak",
+    "username": "root",
+    "password": "root",
     "database": "node_sequelize",
     "host"    : "127.0.0.1",
     "dialect" : "mysql",
-    "port"    : "3306"
+    "port"    : "8889"
   },
   "production": {
-    "username": "staziak",
-    "password": "staziak",
+    "username": "root",
+    "password": "root",
     "database": "node_sequelize",
     "host"    : "127.0.0.1",
     "dialect" : "mysql",
-    "port"    : "3306"
+    "port"    : "8889"
   }
 }
