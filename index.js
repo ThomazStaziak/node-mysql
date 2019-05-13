@@ -23,6 +23,19 @@ router.get('/customers/:id?', (req, res) => {
 router.delete('/customers/:id', (req, res) => {
     execQuery(`DELETE FROM customers WHERE id = ${parseInt(req.params.id)}`, res)
 })
+router.post('/customers', (req, res) => {
+    const name = req.body.nome
+    const cpf  = req.body.cpf
+
+    execQuery(`INSERT INTO customers(nome, cpf) VALUES (${name}, ${cpf})`, res)
+})
+router.patch('/customers/:id', (req, res) => {
+    const id   = parseInt(req.params.id)
+    const nome = req.body.nome
+    const cpf  = req.body.cpf
+
+    execQuery(`UPDATE customers SET nome = ${nome}, cpf = ${cpf} WHERE id = ${id}`, res)
+})
 app.use('/', router)
 
 app.listen(port)
