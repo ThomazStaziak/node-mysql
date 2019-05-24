@@ -22,7 +22,7 @@ apiAuthor(app, db)
 apiIndex(app)
 
  db.sequelize.sync().then(() => {
-    db.author.bulkCreate(
+    /* db.author.bulkCreate(
         times(10, () => ({
             avatar   : faker.image.imageUrl(300, 250, "people"),
             firstName: faker.name.firstName(),
@@ -37,7 +37,7 @@ apiIndex(app)
             content : faker.lorem.paragraph(),
             authorId: random(1, 10)
         }))
-    )
+    ) */
 
     app.listen(3000, () => console.log('API working on port 3000'))
 })

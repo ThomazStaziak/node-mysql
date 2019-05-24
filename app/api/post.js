@@ -9,6 +9,13 @@ module.exports = (app, db) => {
             .then((result) => res.json(result))
     })
 
+    app.get('/latest/posts/limit/:number', (req, res) => {
+        db.post.findAll({ 
+            orderBy: [['id', 'DESC']], 
+            limit  : parseInt(req.params.number) 
+        }).then((result) => res.json(result))
+    })
+
     app.get('/post/:id', (req, res) => {
         db.post.findById(req.params.id)
             .then((result) => res.json(result))
